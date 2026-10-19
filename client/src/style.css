@@ -1,0 +1,8 @@
+/* estilos globais · global styles — os de cada componente ficam no seu .vue (scoped) */
+:root { font-family: system-ui, sans-serif; color: #222; background: #fafafa; }
+body { margin: 0; }
+#app { max-width: 800px; margin: 0 auto; padding: 1rem; }
+nav { display: flex; gap: 1rem; padding: .5rem 0; border-bottom: 1px solid #ddd; margin-bottom: 1rem; }
+nav a { color: #5b1f2e; text-decoration: none; }
+nav a.router-link-active { font-weight: 600; text-decoration: underline; }
+.status { color: #666; }

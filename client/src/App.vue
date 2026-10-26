@@ -4,10 +4,10 @@
 </script>
 
 <template>
-  <nav>
+  <nav style="display: flex; gap: 15px; padding: 10px; background: #f5f5f5; margin-bottom: 20px;">
     <RouterLink to="/">Home</RouterLink>
     <RouterLink to="/items">Items</RouterLink>
-    <!-- <RouterLink to="/<entidade>"><Entidade></RouterLink> -->
+    <RouterLink to="/recipes">Receitas</RouterLink>
   </nav>
   <RouterView />
 </template>

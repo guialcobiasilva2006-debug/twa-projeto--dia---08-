@@ -8,6 +8,7 @@
     <RouterLink to="/">Home</RouterLink>
     <RouterLink to="/items">Items</RouterLink>
     <RouterLink to="/recipes">Receitas</RouterLink>
+    <RouterLink to="/categories">Categorias</RouterLink>
   </nav>
   <RouterView />
 </template>

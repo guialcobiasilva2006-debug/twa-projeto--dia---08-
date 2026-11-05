@@ -1,31 +1,22 @@
 <script setup>
-import { ref } from 'vue'
+import { onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { get } from './api.js'
+import { useLoad } from '../../composables/useLoad.js'
 
 const route = useRoute()
-const status = ref('loading')
-const error = ref(null)
-const meals = ref([])
+const { data: meals, status, error, load } = useLoad(get)
 
-async function load() {
-  status.value = 'loading'
-  try {
-    meals.value = await get(route.params.category)
-    status.value = 'ready'
-  } catch (err) {
-    status.value = 'error'
-    error.value = err.message
-  }
-}
-load()
+onMounted(() => {
+  load(route.params.category)
+})
 </script>
 
 <template>
   <p><RouterLink to="/categories">← Categories</RouterLink></p>
   <p v-if="status === 'loading'" class="status">Loading…</p>
   <p v-else-if="status === 'error'" class="status">Error: {{ error }}</p>
-  <template v-else>
+  <template v-else-if="status === 'ready'">
     <h2>{{ route.params.category }}</h2>
     <ul>
       <li v-for="meal in meals" :key="meal.idMeal">

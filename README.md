@@ -34,20 +34,18 @@ Requisitos · Requirements: Node.js 22 LTS, npm 10, Git.
 
 ## Estrutura · Structure
 
-client/                     frontend Vue 3 + Vite + Vue Router (M1)
-├── src/
-│   ├── main.js             createApp(App).use(router).mount('#app')
-│   ├── App.vue             navegação + <RouterView> · navigation + <RouterView>
-│   ├── router.js           uma rota por ecrã (Aula 06) · one route per screen
-│   ├── Home.vue            página inicial: tema, grupo · home page: theme, group
-│   ├── api/getJSON.js      o fetch das fichas: res.ok + JSON · the fetch from the fichas
-│   └── entities
-│ 
-└── public/data/items.json  dados do exemplo · example data
-server/                     API Express + MongoDB — a partir da Aula 08 (M2) · from Aula 08 (M2)
+`client/` frontend Vue 3 + Vite + Vue Router (M1)[cite: 8]
+* `src/`
+  * `main.js` — `createApp(App).use(router).mount('#app')`[cite: 8]
+  * `App.vue` — navegação / navigation[cite: 8]
+  * `router.js` — uma rota por ecrã (Aula 06) / *one route per screen*[cite: 8]
+  * `Home.vue` — página inicial: tema, grupo / *home page: theme, group*[cite: 8]
+  * `api/getJSON.js` — o fetch das fichas: `res.ok` + JSON / *the fetch from the fichas*[cite: 8]
+  * `entities/` — pasta com as entidades do projeto[cite: 8]
+* `public/data/items.json` — dados do exemplo / *example data*[cite: 8]
+`server/` API Express + MongoDB — a partir da Aula 08 (M2) / *from Aula 08 (M2)*[cite: 8]
 
-**Regra: uma pasta por entidade** em `client/src/entities/<entidade>/`, com `api.js`, `<Entidade>List.vue`, `<Entidade>Detail.vue` e, no M1, `<Entidade>Form.vue`. As rotas da entidade entram no `router.js` e o link na `App.vue` — ver os comentários. · **Rule: one folder per entity** in `client/src/entities/<entity>/`, with `api.js`, `<Entity>List.vue`, `<Entity>Detail.vue` and, for M1, `<Entity>Form.vue`. The entity's routes go in `router.js` and its link in `App.vue` — see the comments there.
-
+> **Regra:** Uma pasta por entidade em `client/src/entities/<entidade>/`, com `api.js`, `<Entidade>List.vue`, `<Entidade>Detail.vue` e, no M1, `<Entidade>Form.vue`. As rotas da entidade entram no `router.js` e o link na `App.vue` — ver os comentários[cite: 8].
 ## Calendário · Calendar
 
 | Marco · Milestone | O quê · What | Peso · Weight | Prazo · Deadline |

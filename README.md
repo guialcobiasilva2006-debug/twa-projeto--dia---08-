@@ -40,11 +40,8 @@ client/                     frontend Vue 3 + Vite + Vue Router (M1)
 │   ├── router.js           uma rota por ecrã (Aula 06) · one route per screen
 │   ├── Home.vue            página inicial: tema, grupo · home page: theme, group
 │   ├── api/getJSON.js      o fetch das fichas: res.ok + JSON · the fetch from the fichas
-│   └── entities/
-│       └── items/          ENTIDADE DE EXEMPLO · EXAMPLE ENTITY (apagar depois · delete afterwards)
-│           ├── api.js      os URLs desta entidade, e só aqui · this entity's URLs, nowhere else
-│           ├── ItemsList.vue
-│           └── ItemDetail.vue
+│   └── entities
+│ 
 └── public/data/items.json  dados do exemplo · example data
 server/                     API Express + MongoDB — a partir da Aula 08 (M2) · from Aula 08 (M2)
 
@@ -62,3 +59,30 @@ server/                     API Express + MongoDB — a partir da Aula 08 (M2) �
 ## Declaração de IA · AI declaration
 
 Declaramos que utilizamos ferramentas de IA generativa como apoio ao desenvolvimento e estruturação inicial do projeto, em conformidade com as regras estabelecidas.
+
+
+## Perguntas Frequentes 
+1. A API não tem detalhe por ID, só lista. O detalhe pode usar list() e find?
+
+Resposta / Procedimento: Sim, o detalhe pode utilizar a função list() combinada com um find para localizar o item, devendo essa opção ser explicitamente descrita no README.   
+
+
+2. A API utiliza um nome ou slug em vez de um número para identificar os itens. Como fica a rota?
+
+Resposta / Procedimento: A rota mantém-se estruturada como /:id e o link gerado a partir da lista leva o identificador (seja nome ou slug) que a função get() espera receber.   
+
+
+3. A API não suporta paginação. Como se resolve?
+
+Resposta / Procedimento: A lista pode ficar sem paginação ou pode ser aplicado um slice diretamente no api.js. Não há perda de pontos por a API não paginar nativamente.   
+
+
+4. E se a API pública falhar (problemas de CORS, chave ou limite de pedidos)?
+
+Resposta / Procedimento: Deve ser acautelada uma alternativa de segurança: guardar uma amostra JSON estática na pasta public/data/ do projeto para servir de reserva. O api.js lê a partir daí em caso de falha, e essa situação deve ser referida no README.   
+
+
+5. A utilização de Inteligência Artificial generativa é permitida?
+
+Resposta / Procedimento: Sim, é permitida como apoio ao desenvolvimento em casa, mas exige uma declaração obrigatória no README a detalhar o quê, onde e como foi verificado. É importante garantir que dominas o código, uma vez que na Parte B do teste (a realizar a 14/01) serás questionado/a a explicar o código da tua entidade.   
+

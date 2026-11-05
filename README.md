@@ -7,10 +7,11 @@ Tecnologias Web Avançadas · Licenciatura em Engenharia Informática · ISLA Ga
 Turma: Dia
 
 | Membro · Member | Nº | Entidade · Entity | Endpoints da API pública (lista · um item) · Public API endpoints (list · one item) |
-| Gonçalo Pereira | a22403631 | Receita (Recipe) | GET /search.php?s= · GET /lookup.php?i=:id |
-| Guilherme Silva | a22403214 | Ingrediente (Ingredient) | GET /list.php?i=list · GET /filter.php?i=:ingrediente |
-| Gonçalo Dias | a22404774 | Categoria (Category) | GET /categories.php · GET /filter.php?c=:categoria |
-| David Moreira | a22408312 | Área/Origem (Area) | GET /list.php?a=list · GET /filter.php?a=:area |
+| :--- | :--- | :--- | :--- |
+| Gonçalo Pereira | a22403631 | Receita (Recipe) | GET /search.php?s= · GET /lookup.php?i=:id[cite: 9] |
+| Guilherme Silva | a22403214 | Ingrediente (Ingredient) | GET /list.php?i=list · GET /filter.php?i=:ingrediente[cite: 9] |
+| Gonçalo Dias | a22404774 | Categoria (Category) | GET /categories.php · GET /filter.php?c=:categoria[cite: 9] |
+| David Moreira | a22408312 | Área/Origem (Area) | GET /list.php?a=list · GET /filter.php?a=:area[cite: 9] |
 
 *Uma entidade por membro, de ponta a ponta: ecrãs Vue (M1), modelo e endpoints (M2), secção do relatório (M3) — e as perguntas da parte B do teste são sobre a tua entidade.
 

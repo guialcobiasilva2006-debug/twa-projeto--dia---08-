@@ -1,18 +1,18 @@
 <script setup>
-// App.vue — a moldura: navegação + o ecrã da rota atual. · The frame: navigation + the current route's screen.
-// Cada entidade acrescenta o seu link aqui. · Each entity adds its link here.
+// Menu de navegação principal do projeto
 </script>
 
 <template>
-  <nav style="display: flex; gap: 15px; padding: 10px; background: #f5f5f5; margin-bottom: 20px;">
-    <RouterLink to="/">Home</RouterLink>
-    <RouterLink to="/items">Items</RouterLink>
-    <RouterLink to="/recipes">Receitas</RouterLink>
-<<<<<<< Updated upstream
-    <RouterLink to="/categories">Categorias</RouterLink>
-=======
-    <Router-Link to="/areas">Áreas/Origens</Router-Link>
->>>>>>> Stashed changes
-  </nav>
-  <RouterView />
+  <div>
+    <nav style="display: flex; gap: 20px; padding: 15px 20px; background-color: #f8f9fa; border-bottom: 1px solid #dee2e6; align-items: center;">
+      <RouterLink to="/" style="text-decoration: none; color: #0066cc; font-weight: bold;">Home</RouterLink>
+      <RouterLink to="/recipes" style="text-decoration: none; color: #0066cc;">Receitas</RouterLink>
+      <RouterLink to="/categories" style="text-decoration: none; color: #0066cc;">Categorias</RouterLink>
+      <RouterLink to="/areas" style="text-decoration: none; color: #0066cc;">Áreas/Origens</RouterLink>
+    </nav>
+
+    <main style="padding: 20px;">
+      <RouterView />
+    </main>
+  </div>
 </template>

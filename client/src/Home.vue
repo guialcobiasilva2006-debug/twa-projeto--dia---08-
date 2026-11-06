@@ -36,22 +36,28 @@
         </thead>
         <tbody>
           <tr style="border-bottom: 1px solid #eee;">
-            <td style="padding: 12px;"><strong>Gonçalo Silva</strong></td>
-            <td style="padding: 12px;">a2006</td>
-            <td style="padding: 12px;"><span style="background: #e6f4ea; color: #1e7e34; padding: 3px 8px; border-radius: 4px; font-weight: bold;">Receitas (Recipes)</span></td>
+            <td style="padding: 12px;">Gonçalo Pereira</td>
+            <td style="padding: 12px;">a22403631</td>
+            <td style="padding: 12px;">Receita (Recipe)</td>
             <td style="padding: 12px;"><code>/search.php?s=</code> & <code>/lookup.php?i=</code></td>
           </tr>
           <tr style="border-bottom: 1px solid #eee;">
-            <td style="padding: 12px;">Colega 1</td>
-            <td style="padding: 12px;">aXXXXX</td>
-            <td style="padding: 12px;">Categorias (Categories)</td>
-            <td style="padding: 12px;"><code>/categories.php</code></td>
+            <td style="padding: 12px;"><strong>Guilherme Silva</strong></td>
+            <td style="padding: 12px;"><strong>a22403214</strong></td>
+            <td style="padding: 12px;"><span style="background: #e6f4ea; color: #1e7e34; padding: 3px 8px; border-radius: 4px; font-weight: bold;">Ingrediente (Ingredient)</span></td>
+            <td style="padding: 12px;"><code>/list.php?i=list</code> & <code>/filter.php?i=</code></td>
+          </tr>
+          <tr style="border-bottom: 1px solid #eee;">
+            <td style="padding: 12px;">Gonçalo Dias</td>
+            <td style="padding: 12px;">a22404774</td>
+            <td style="padding: 12px;">Categoria (Category)</td>
+            <td style="padding: 12px;"><code>/categories.php</code> & <code>/filter.php?c=</code></td>
           </tr>
           <tr>
-            <td style="padding: 12px;">Colega 2</td>
-            <td style="padding: 12px;">aXXXXX</td>
-            <td style="padding: 12px;">Áreas / Origens (Areas)</td>
-            <td style="padding: 12px;"><code>/list.php?a=list</code></td>
+            <td style="padding: 12px;">David Moreira</td>
+            <td style="padding: 12px;">a22408312</td>
+            <td style="padding: 12px;">Área / Origem (Area)</td>
+            <td style="padding: 12px;"><code>/list.php?a=list</code> & <code>/filter.php?a=</code></td>
           </tr>
         </tbody>
       </table>
@@ -70,6 +76,9 @@
         </RouterLink>
         <RouterLink to="/areas" style="padding: 12px 20px; background-color: #35495e; color: white; text-decoration: none; border-radius: 6px; font-weight: bold;">
           Ver Áreas/Origens
+        </RouterLink>
+        <RouterLink to="/ingredients" style="padding: 12px 20px; background-color: #35495e; color: white; text-decoration: none; border-radius: 6px; font-weight: bold;">
+          Ver Ingredientes
         </RouterLink>
       </div>
     </section>

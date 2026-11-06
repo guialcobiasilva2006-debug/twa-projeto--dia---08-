@@ -9,8 +9,9 @@
       <RouterLink to="/recipes" style="text-decoration: none; color: #0066cc;">Receitas</RouterLink>
       <RouterLink to="/categories" style="text-decoration: none; color: #0066cc;">Categorias</RouterLink>
       <RouterLink to="/areas" style="text-decoration: none; color: #0066cc;">Áreas/Origens</RouterLink>
+      <RouterLink to="/ingredients" style="text-decoration: none; color: #0066cc;">Ingredientes</RouterLink>
     </nav>
-
+    
     <main style="padding: 20px;">
       <RouterView />
     </main>

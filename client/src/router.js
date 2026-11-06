@@ -8,6 +8,7 @@ import CategoryDetail from './entities/categories/CategoryDetail.vue'
 import CategoryForm from './entities/categories/CategoryForm.vue'
 import AreaList from './entities/areas/AreaList.vue'
 import AreaDetail from './entities/areas/AreaDetail.vue'
+import AreaForm from './entities/areas/AreaForm.vue'
 import NotFound from './pages/NotFound.vue'
 
 const routes = [
@@ -19,7 +20,8 @@ const routes = [
   { path: '/categories/new', component: CategoryForm },
   { path: '/categories/:category', component: CategoryDetail },
   { path: '/areas', component: AreaList },
-  { path: '/areas/:area', component: AreaDetail },
+  { path: '/areas/new', component: AreaForm },
+  { path: '/areas/:id', component: AreaDetail },
   { path: '/:pathMatch(.*)*', component: NotFound },
 ]
 

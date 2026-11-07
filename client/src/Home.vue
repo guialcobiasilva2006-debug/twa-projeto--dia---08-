@@ -42,9 +42,9 @@
             <td style="padding: 12px;"><code>/search.php?s=</code> & <code>/lookup.php?i=</code></td>
           </tr>
           <tr style="border-bottom: 1px solid #eee;">
-            <td style="padding: 12px;"><strong>Guilherme Silva</strong></td>
-            <td style="padding: 12px;"><strong>a22403214</strong></td>
-            <td style="padding: 12px;"><span style="background: #e6f4ea; color: #1e7e34; padding: 3px 8px; border-radius: 4px; font-weight: bold;">Ingrediente (Ingredient)</span></td>
+            <td style="padding: 12px;">Guilherme Silva</td>
+            <td style="padding: 12px;">a22403214</td>
+            <td style="padding: 12px;">Ingrediente (Ingredient)</td>
             <td style="padding: 12px;"><code>/list.php?i=list</code> & <code>/filter.php?i=</code></td>
           </tr>
           <tr style="border-bottom: 1px solid #eee;">
@@ -68,8 +68,8 @@
       <h2 style="color: #35495e;">Explorar Entidades</h2>
       <p>Utiliza os botões abaixo ou o menu superior para aceder às secções do catálogo:</p>
       <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 15px;">
-        <RouterLink to="/recipes" style="padding: 12px 20px; background-color: #42b883; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-          Ver Receitas ➔
+        <RouterLink to="/recipes" style="padding: 12px 20px; background-color: #35495e; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+          Ver Receitas
         </RouterLink>
         <RouterLink to="/categories" style="padding: 12px 20px; background-color: #35495e; color: white; text-decoration: none; border-radius: 6px; font-weight: bold;">
           Ver Categorias

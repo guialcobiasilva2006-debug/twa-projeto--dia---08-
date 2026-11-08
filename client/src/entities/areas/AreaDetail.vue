@@ -5,7 +5,7 @@ import { useLoad } from '../../composables/useLoad.js'
 import { get } from './api.js'
 
 const route = useRoute()
-const { data: meals, status, error, load } = useLoad(get)
+const { data: areaData, status, error, load } = useLoad(get)
 
 watchEffect(() => {
   if (route.params.id) load(route.params.id)
@@ -20,8 +20,8 @@ watchEffect(() => {
     <p v-if="status === 'loading'">A carregar receitas...</p>
     <p v-else-if="status === 'error'">Erro: {{ error }}</p>
 
-    <ul v-else-if="meals && meals.length">
-      <li v-for="meal in meals" :key="meal.idMeal" style="margin-bottom: 12px;">
+    <ul v-else-if="areaData?.meals?.length">
+      <li v-for="meal in areaData.meals" :key="meal.idMeal" style="margin-bottom: 12px;">
         <img
           :src="meal.strMealThumb"
           :alt="meal.strMeal"
@@ -33,7 +33,7 @@ watchEffect(() => {
         </router-link>
       </li>
     </ul>
-    <p v-else-if="status === 'ready'">Nenhum prato encontrado para esta área.</p>
+    <p v-else-if="status === 'ready' && !areaData?.meals?.length">Nenhum prato encontrado para esta área.</p>
   </div>
 </template>
 

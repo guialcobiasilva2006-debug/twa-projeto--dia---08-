@@ -1,34 +1,30 @@
 <script setup>
-import { reactive } from 'vue'
+import { reactive, computed } from 'vue'
 import { useRouter } from 'vue-router'
-import { store } from '../../store.js'
+import { create } from './api.js'
 
+const emit = defineEmits(['save'])
 const router = useRouter()
 
-const form = reactive({
+const draft = reactive({
   strCategory: '',
   strCategoryDescription: '',
   strCategoryThumb: '',
 })
 
-const errors = reactive({
-  strCategory: '',
+const errors = computed(() => {
+  const e = {}
+  if (!draft.strCategory.trim()) e.strCategory = 'O nome é obrigatório.'
+  return e
 })
 
-function validate() {
-  errors.strCategory = form.strCategory.trim() ? '' : 'O nome é obrigatório.'
-  return !errors.strCategory
-}
+const isValid = computed(() => Object.keys(errors.value).length === 0)
 
 function save() {
-  if (!validate()) return
-  store.categories.push({
-    strCategory: form.strCategory.trim(),
-    strCategoryDescription: form.strCategoryDescription.trim(),
-    strCategoryThumb: form.strCategoryThumb.trim(),
-    _local: true,
-  })
-  router.push('/categories')
+  if (!isValid.value) return
+  const id = create({ ...draft })
+  emit('save', { ...draft })
+  router.push(`/categories/${id}`)
 }
 </script>
 
@@ -38,19 +34,19 @@ function save() {
   <form @submit.prevent="save" class="form">
     <label>
       Nome *
-      <input v-model="form.strCategory" type="text" placeholder="ex: Marisco" />
+      <input v-model.trim="draft.strCategory" type="text" required placeholder="ex: Marisco" />
       <span v-if="errors.strCategory" class="error">{{ errors.strCategory }}</span>
     </label>
     <label>
       Descrição
-      <textarea v-model="form.strCategoryDescription" rows="4" placeholder="Descrição da categoria…" />
+      <textarea v-model.trim="draft.strCategoryDescription" rows="4" placeholder="Descrição da categoria…" />
     </label>
     <label>
       URL da imagem
-      <input v-model="form.strCategoryThumb" type="url" placeholder="https://…" />
+      <input v-model.trim="draft.strCategoryThumb" type="url" placeholder="https://…" />
     </label>
     <div class="actions">
-      <button type="submit">Guardar</button>
+      <button type="submit" :disabled="!isValid">Guardar</button>
       <RouterLink to="/categories">Cancelar</RouterLink>
     </div>
   </form>

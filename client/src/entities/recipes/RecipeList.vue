@@ -33,18 +33,21 @@ function handleSearch() {
     </form>
 
     <p v-if="status === 'loading'">A carregar receitas da API...</p>
-    <p v-if="status === 'error'" style="color: red;">Erro ao carregar: {{ error }}</p>
+    <p v-if="status === 'error'" style="color: red;">
+      Erro ao carregar: {{ error }}
+      <button type="button" @click="loadRecipes()">Retry</button>
+    </p>
 
-    <ul v-if="status === 'ready' && recipes">
+    <ul v-if="status === 'ready' && recipes?.length">
       <li v-for="recipe in recipes" :key="recipe.idMeal" style="margin-bottom: 10px;">
         <router-link :to="`/recipes/${recipe.idMeal}`">
           <strong>{{ recipe.strMeal }}</strong>
-        </router-link> 
-        <span>— Categoria: {{ recipe.strCategory }} | Origem: {{ recipe.strArea }}</span>
+        </router-link>
+        <span>— Categoria: {{ recipe.strCategory || 'Desconhecida' }} | Origem: {{ recipe.strArea || 'Desconhecida' }}</span>
       </li>
     </ul>
 
-    <p v-else-if="status === 'ready' && !recipes" style="color: #666;">
+    <p v-else-if="status === 'ready'" style="color: #666;">
       Nenhuma receita encontrada para "{{ searchQuery }}".
     </p>
   </div>

@@ -1,24 +1,15 @@
 <script setup>
-import { ref } from 'vue'
+import { watchEffect } from 'vue'
 import { useRoute } from 'vue-router'
 import { get } from './api.js'
+import { useLoad } from '../../composables/useLoad.js'
 
 const route = useRoute()
-const status = ref('loading')
-const error = ref(null)
-const ingredientData = ref(null)
+const { data: ingredientData, status, error, load } = useLoad(get)
 
-async function load() {
-  status.value = 'loading'
-  try {
-    ingredientData.value = await get(route.params.id)
-    status.value = 'ready'
-  } catch (err) {
-    status.value = 'error'
-    error.value = err.message
-  }
-}
-load()
+watchEffect(() => {
+  if (route.params.id) load(route.params.id)
+})
 </script>
 
 <template>

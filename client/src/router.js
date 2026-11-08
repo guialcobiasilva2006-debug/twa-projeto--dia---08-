@@ -5,11 +5,13 @@ import RecipeDetail from './entities/recipes/RecipeDetail.vue'
 import RecipeForm from './entities/recipes/RecipeForm.vue'
 import CategoryList from './entities/categories/CategoryList.vue'
 import CategoryDetail from './entities/categories/CategoryDetail.vue'
+import CategoryForm from './entities/categories/CategoryForm.vue'
 import AreaList from './entities/areas/AreaList.vue'
 import AreaDetail from './entities/areas/AreaDetail.vue'
-// 1. Importa os componentes dos ingredientes (ajusta o caminho se necessário)
+import AreaForm from './entities/areas/AreaForm.vue'
 import IngredientList from './entities/ingredients/IngredientList.vue'
 import IngredientDetail from './entities/ingredients/IngredientDetail.vue'
+import IngredientForm from './entities/ingredients/IngredientForm.vue'
 
 const routes = [
   { path: '/', name: 'Home', component: Home },
@@ -17,10 +19,13 @@ const routes = [
   { path: '/recipes/new', name: 'RecipeForm', component: RecipeForm },
   { path: '/recipes/:id', name: 'RecipeDetail', component: RecipeDetail },
   { path: '/categories', name: 'CategoryList', component: CategoryList },
+  { path: '/categories/new', name: 'CategoryForm', component: CategoryForm },
   { path: '/categories/:id', name: 'CategoryDetail', component: CategoryDetail },
   { path: '/areas', name: 'AreaList', component: AreaList },
+  { path: '/areas/new', name: 'AreaForm', component: AreaForm },
   { path: '/areas/:id', name: 'AreaDetail', component: AreaDetail },
   { path: '/ingredients', name: 'IngredientList', component: IngredientList },
+  { path: '/ingredients/new', name: 'IngredientForm', component: IngredientForm },
   { path: '/ingredients/:id', name: 'IngredientDetail', component: IngredientDetail }
 ]
 

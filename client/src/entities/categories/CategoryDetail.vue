@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted } from 'vue'
+import { watchEffect } from 'vue'
 import { useRoute } from 'vue-router'
 import { get } from './api.js'
 import { useLoad } from '../../composables/useLoad.js'
@@ -7,8 +7,8 @@ import { useLoad } from '../../composables/useLoad.js'
 const route = useRoute()
 const { data: meals, status, error, load } = useLoad(get)
 
-onMounted(() => {
-  load(route.params.category)
+watchEffect(() => {
+  if (route.params.id) load(route.params.id)
 })
 </script>
 
@@ -17,7 +17,7 @@ onMounted(() => {
   <p v-if="status === 'loading'" class="status">Loading…</p>
   <p v-else-if="status === 'error'" class="status">Error: {{ error }}</p>
   <template v-else-if="status === 'ready'">
-    <h2>{{ route.params.category }}</h2>
+    <h2>{{ route.params.id }}</h2>
     <ul>
       <li v-for="meal in meals" :key="meal.idMeal">
         <img :src="meal.strMealThumb" :alt="meal.strMeal" width="60" />

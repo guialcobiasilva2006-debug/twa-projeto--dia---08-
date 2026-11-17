@@ -26,6 +26,7 @@ const routes = [
   { path: '/areas/:id', name: 'AreaDetail', component: AreaDetail },
   { path: '/ingredients', name: 'IngredientList', component: IngredientList },
   { path: '/ingredients/new', name: 'IngredientForm', component: IngredientForm },
+  { path: '/ingredients/:id/edit', name: 'IngredientEdit', component: IngredientForm }, // <- Rota de edição adicionada aqui!
   { path: '/ingredients/:id', name: 'IngredientDetail', component: IngredientDetail }
 ]
 

@@ -1,5 +1,6 @@
 import express from 'express'
 import recipesRouter from './entities/recipes/router.js'
+import areasRouter from './entities/areas/router.js'
 
 const app = express()
 
@@ -12,6 +13,7 @@ app.use(express.json())
 
 // Registo da tua entidade
 app.use('/api/recipes', recipesRouter)
+app.use('/api/areas', areasRouter)
 
 app.use((req, res) => {
   res.status(404).json({ error: 'not found' })
